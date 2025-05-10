@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altındağ Elektrik - Ankara Elektrikçi Hizmetleri</title> <meta name="description" content="Altındağ Elektrik, Ankara Altındağ bölgesinde 25 yıllık tecrübesiyle güvenilir elektrikçi hizmetleri sunar. Elektrik arıza, tesisat, montaj ve tüm elektrik işleriniz için bize ulaşın. Telefon: +90 535 328 71 76">
+    <meta name="keywords" content="Altındağ elektrik, Altındağ elektrikçi, Ankara elektrikçi, elektrik arıza Altındağ, elektrik tesisat Altındağ, elektrik montaj, acil elektrikçi Altındağ, Altındağ Elektrik Rafet, güvenilir elektrikçi">
+    <meta name="author" content="Altındağ Elektrik">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Beyaz arka plan */
+            scroll-behavior: smooth; /* İletişim tuşu için yumuşak kaydırma */
+        }
+
+        nav {
+            background-color: #f0f0f0; /* Biraz koyu beyaz (açık gri) */
+            padding: 20px 30px; /* Başlangıç padding'i */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            flex-wrap: wrap;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: calc(100% - 60px); /* Padding'i hesaba katarak tam genişlik */
+            z-index: 1000;
+            transition: padding 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav.nav-scrolled {
+            padding: 10px 30px; /* Kaydırıldığında padding */
+            background-color: #e9e9e9;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffc107; /* Sarı yazı */
+            margin-right: 20px;
+            transition: font-size 0.3s ease;
+        }
+
+        nav.nav-scrolled .logo {
+            font-size: 20px;
+        }
+
+        .nav-contact-info { /* Bu kısım navbarda telefon ve iletişim için gerekliydi */
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-phone {
+            font-size: 16px;
+            color: #333;
+            margin-right: 20px;
+            font-weight: bold;
+            transition: font-size 0.3s ease;
+        }
+        nav.nav-scrolled .nav-phone {
+            font-size: 14px;
+        }
+
+        .nav-phone a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-phone a:hover {
+            color: #ffc107;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            background-color: #ffc107;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: padding 0.3s ease, font-size 0.3s ease;
+        }
+        nav.nav-scrolled .nav-links a {
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            background-color: #e0a800;
+        }
+
+        .container {
+            padding: 20px;
+            /* margin-top JS ile ayarlanacak */
+        }
+
+        h1 { /* Sadece H1 için font boyutu biraz büyütüldü */
+            text-align: center;
+            color: #333;
+            font-size: 2.2em; /* H1 font boyutu */
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 1.8em; /* H2 font boyutu */
+        }
+
+        .intro-text { /* H1 altındaki tanıtım yazısı için stil */
+            text-align:center;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            min-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .map-section { /* Harita bölümü için stil */
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .map-section h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .map-section img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        /* Harita linki geçerli değilse görünecek uyarı için stil (opsiyonel) */
+        .map-placeholder-note {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 10px;
+        }
+
+
+        #contact-form-section {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+        .contact-details {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-details p {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+        }
+        .contact-details a {
+            color: #333;
+            text-decoration: none;
+        }
+        .contact-details a:hover {
+            color: #ffc107;
+        }
+
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        form button {
+            background-color: #ffc107;
+            color: #333;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        form button:hover {
+            background-color: #e0a800;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #f0f0f0;
+            margin-top: 30px;
+        }
+        footer p {
+            margin: 8px 0;
+        }
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="mainNav">
+        <div class="logo">Altındağ Elektrik</div>
+            <div class="nav-links">
+                <a href="#contact-form-section">İletişim</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="mainContainer">
+        <h1>Altındağ Elektrik Hizmetleri</h1>
+        <p class="intro-text">Güvenilir elektrik çözümleri için doğru adrestesiniz. 25 yıllık tecrübemiz var.</p>
+
+        <h2>Çalışmalarımızdan Örnekler</h2>
+        <div class="gallery">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSVii5XI_jmN6pMjE4ZVwxT2eZ__8D94xhYW339_ASQ71ev64NBULneSwo17kQ8sEeTD7yGfsEvqWfuc_Q9KQ_8u9wME94zTrJxR8_tYwdVjrxjQ3EwaXfem9Srv2DOjaOyLo4pAxOx07jRN4x1MuqC5S3chk9BRor4ZX-_4jF0OH2N0kbL7diiAeOc8dw/s2000/1000175144.jpg" alt="Altındağ Elektrik Çalışma Örneği 1">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQLVbJQV4P94RXo9j2RowDiiR862EqM9oYzFQ74bFP_SW-M7kC9ZcSPV-IrbNCFrSIxDoOiSfJ3bowoQRlR9pFwMuDnDAbU6A8stGtCmDFzS924T7ZIIr1xtfdzQKH79z-lsauQAmqaVglHa7ONjc-PJq4GRmczaBi4aoC1c8B4aHbaFWPQWXkoivvEoQ5/s2000/1000175146.jpg" alt="Altındağ Elektrik Çalışma Örneği 2">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbbJVhcJxPikOjs-l_NHputmD-i25ZqzXOwK8ErUl6ZTZ5ioNBfBARKRhkbvffUhNR5hzZ6_NMiNXZJK3xhVnxuvLmd_ID6XytyKk-Yi0qvmg8HI2KZvgNmpVJwltrTQQRb2B5-NSxAAcTdOTOGmID_LAB0TY38RqVHlZSXt5vweemnyBO1P6IHDTeOCxO/s2000/1000175156.jpg" alt="Altındağ Elektrik Çalışma Örneği 3">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpluiKuzGrRIIm24_0862KpGV66Xbau70GYUQfQgWhMwWrXUs_KsbA9fGft11go2ipRYOiyuTXdR2p75v38doIbOy5skOZ-ZwCZvtHPW46D33YvyjOzL8XUDt-g7nfF8BUIa0qtKbFTJKeXHh1v7ABoQs1IWawBnI0CJuBDo6pJ_rwH-0isXaPszlk1tbb/s2000/1000175148.jpg" alt="Altındağ Elektrik Çalışma Örneği 4">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiq7cpL4ZdlTRsS3BFBRiEUTfwUCf4_otz4ISv_IJjNOIWl5r_J0lP1bDj3trbHivIPCqOWY7ojtgkNtv6-LdaD_WFZZ8J5yP2NI_YFCjorEVEw7j5B-s1fnS847biAlDwWfkP34nM-Rc41cY0-LVHQw5X4h79-AnV5oiStDKIhPuC9C5Fls5glqfRS835K/s2000/1000175151.jpg" alt="Altındağ Elektrik Çalışma Örneği 5">
+        </div>
+       <section id="contact-form-section">
+            <h2>Bize Ulaşın</h2>
+            <div class="contact-details">
+                <p>Hizmetlerimiz hakkında bilgi almak veya randevu oluşturmak için aşağıdaki bilgilerden bize ulaşabilirsiniz.</p>
+                <p><strong>Telefon:</strong> <a href="tel:+905353287176">+90 535 328 71 76</a></p>
+                <p><strong>E-posta:</strong> <a href="mailto:elektrikcirafet@gmail.com">elektrikcirafet@gmail.com</a></p>
+            </div>
+            <form action="https://formsubmit.co/Elektrikcirafet@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Yeni İletişim Formu Mesajı - Altındağ Elektrik">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="SITENIZIN_TESLIM_EDILDI_SAYFASI_URLSI_ISTEGE_BAGLI">
+
+                <div>
+                    <label for="name">İsim Soyisim:</label>
+                    <input type="text" id="name" name="isim_soyisim" required>
+                </div>
+
+                <div>
+                    <label for="contact_info">Telefon Numarası / E-posta (Form için):</label>
+                    <input type="text" id="contact_info" name="telefon_eposta_form" required>
+                </div>
+
+                <div>
+                    <label for="message">İleti:</label>
+                    <textarea id="message" name="ileti" required></textarea>
+                </div>
+
+                <button type="submit">Gönder</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2000 Altındağ Elektrik. Tüm hakları saklıdır.</p>
+        <p><strong>Telefon:</strong> <a href="tel:+905353287176">+90 535 328 71 76</a></p>
+        <p><strong>E-posta:</strong> <a href="mailto:elektrikcirafet@gmail.com">elektrikcirafet@gmail.com</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var nav = document.getElementById('mainNav');
+            var mainContainer = document.getElementById('mainContainer');
+            var navHeight = nav.offsetHeight;
+
+            // Set initial padding for the main container to avoid overlap
+            mainContainer.style.marginTop = navHeight + 'px'; // margin-top olarak değiştirildi
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 50) { // 50 piksel kaydırıldıktan sonra küçülsün
+                    nav.classList.add('nav-scrolled');
+                } else {
+                    nav.classList.remove('nav-scrolled');
+                }
+            });
+
+            // Adjust padding if window is resized (in case nav height changes due to wrapping)
+            window.addEventListener('resize', function() {
+                navHeight = nav.offsetHeight;
+                mainContainer.style.marginTop = navHeight + 'px'; // margin-top olarak değiştirildi
+            });
+        });
+    </script>
+
+</body>
+</html>
